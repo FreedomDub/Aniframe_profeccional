@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniframe Studio - Студия дубляжа и озвучки</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Aniframe Studio</h1>
+                <p>Профессиональная студия дубляжа и озвучки</p>
+            </div>
+            <nav class="nav">
+                <a href="#about">О нас</a>
+                <a href="#employees">Сотрудники</a>
+                <a href="#projects">Проекты</a>
+                <a href="#contact">Контакты</a>
+                <button class="btn-login" id="loginBtn">Вход</button>
+                <button class="btn-admin" id="adminBtn" style="display:none;">Админ-панель</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Профессиональный дубляж и озвучка</h2>
+                <p>Качественный перевод и озвучка анимации, фильмов и сериалов</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" id="resumeBtn">Отправить резюме</button>
+                    <button class="btn-secondary" id="questionBtn">Задать вопрос</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>О нашей студии</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Aniframe Studio - это современная студия дубляжа, специализирующаяся на озвучке анимационных проектов, фильмов и сериалов. Мы работаем с 2015 года и успешно реализовали более 200 проектов.</p>
+                    <p>Наша команда состоит из профессиональных актеров озвучки, звукорежиссеров и переводчиков, которые обеспечивают высочайшее качество готового продукта.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>200+</h3>
+                        <p>Завершенных проектов</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Профессионалов в команде</p>
+                    </div>
+                    <div class="stat">
+                        <h3>8 лет</h3>
+                        <p>Опыта работы</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employees Section -->
+    <section id="employees" class="employees">
+        <div class="container">
+            <h2>Наша команда</h2>
+            <div class="employees-grid" id="employeesGrid">
+                <!-- Employees will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Наши проекты</h2>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Bot Section -->
+    <section class="chat-section">
+        <div class="container">
+            <h2>Чат-бот Aniframe</h2>
+            <div class="chat-buttons">
+                <button class="chat-btn" id="sendResume">
+                    <i class="fas fa-file-upload"></i>
+                    Отправить резюме
+                </button>
+                <button class="chat-btn" id="askQuestion">
+                    <i class="fas fa-question-circle"></i>
+                    Задать вопрос
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@aniframe.ru</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+7 (495) 123-45-67</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Москва, ул. Профессиональная, 15</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Aniframe Studio. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Вход в систему</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit" class="btn-primary">Войти</button>
+            </form>
+            <p>Нет аккаунта? <a href="#" id="showRegister">Зарегистрироваться</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Регистрация</h2>
+            <form id="registerForm">
+                <input type="text" placeholder="Имя" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit" class="btn-primary">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Отправить резюме</h2>
+            <form id="resumeForm">
+                <input type="text" placeholder="ФИО" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Телефон">
+                <textarea placeholder="Опыт работы и навыки" rows="4" required></textarea>
+                <div class="file-upload">
+                    <label for="resumeFile">Прикрепить резюме (PDF, DOC):</label>
+                    <input type="file" id="resumeFile" accept=".pdf,.doc,.docx">
+                </div>
+                <div class="file-upload">
+                    <label for="portfolioFile">Прикрепить портфолио (до 3 файлов):</label>
+                    <input type="file" id="portfolioFile" multiple>
+                </div>
+                <button type="submit" class="btn-primary">Отправить резюме</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Question Modal -->
+    <div id="questionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Задать вопрос</h2>
+            <form id="questionForm">
+                <input type="text" placeholder="Имя" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Ваш вопрос" rows="4" required></textarea>
+                <button type="submit" class="btn-primary">Отправить вопрос</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-header">
+            <h3>Админ-панель</h3>
+            <button id="closeAdmin">✕</button>
+        </div>
+        <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="employees-tab">Сотрудники</button>
+            <button class="tab-btn" data-tab="projects-tab">Проекты</button>
+            <button class="tab-btn" data-tab="content-tab">Контент</button>
+        </div>
+        <div class="admin-content">
+            <div id="employees-tab" class="tab-content active">
+                <h4>Управление сотрудниками</h4>
+                <button class="btn-primary" id="addEmployeeBtn">Добавить сотрудника</button>
+                <div id="adminEmployeesList"></div>
+            </div>
+            <div id="projects-tab" class="tab-content">
+                <h4>Управление проектами</h4>
+                <button class="btn-primary" id="addProjectBtn">Добавить проект</button>
+                <div id="adminProjectsList"></div>
+            </div>
+            <div id="content-tab" class="tab-content">
+                <h4>Редактирование контента</h4>
+                <div class="content-editor">
+                    <label>Текст о компании:</label>
+                    <textarea id="aboutText" rows="6"></textarea>
+                    <button class="btn-primary" id="saveAboutText">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
